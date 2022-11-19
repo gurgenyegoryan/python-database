@@ -1,5 +1,13 @@
 import csv
-
+# import pandas as pd
+#
+# # read CSV file
+# results = pd.read_csv('Individual_Incident_2004.csv')
+#
+# # count no. of lines
+# print(type(results))
+# print("Number of lines present:-",
+#       len(results))
 # Open file
 csv_file = "Individual_Incident_2004.csv"
 with open(csv_file) as file_obj:
