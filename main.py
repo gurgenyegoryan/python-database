@@ -39,9 +39,6 @@ time.sleep(5)
 end = time.time()
 timer = end - start
 print(f"Process to last {timer/60} minutes")
-
-
-
 # Set rows in table
 # row_final = []
 # for row in csv_data:
