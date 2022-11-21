@@ -28,7 +28,7 @@ def return_table_name(list_of_existing_tables):
     global table_name
     global check_result
     if table_name in list_of_existing_tables:
-        print(f"You have table with name {table_name}")
+        print(f"You have table with name {table_name},it will be replaced by a new one")
     else:
         print(f"You dont have table with name {table_name}")
         check_result = 0
