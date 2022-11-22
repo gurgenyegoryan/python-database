@@ -15,6 +15,8 @@ RUN ./mariadb_repo_setup \
   
 RUN yum install MariaDB-shared MariaDB-devel -y
 
+RUN chmod +x ./mariadbServer_install_configure.sh
+
 WORKDIR /app
 COPY . .
-CMD [ "python", "main.py" ]
+CMD [ "python3", "main.py" ]
