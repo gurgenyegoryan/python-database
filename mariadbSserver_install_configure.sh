@@ -1,9 +1,9 @@
 #!/bin/bash
 
-yum install mariadb-server
+yum install mariadb-server -y
 service mariadb start
 
-root_pass = "Yeg.1995"
+root_pass < "Yeg.1995"
 # root_temp_pass=$(grep 'A temporary password' /var/log/mysqld.log |tail -1 |awk '{split($0,a,": "); print a[2]}')
 # echo "root_temp_pass:"$root_temp_pass
 
