@@ -17,18 +17,32 @@ RUN ./mariadb_repo_setup \
 
 RUN apt-get update -y
 RUN apt-get install -y libmariadb3
-WORKDIR /app
-COPY . .
+
+COPY python_installer.sh python_installer.sh
 RUN chmod +x python_installer.sh
 RUN ./python_installer.sh
+
+RUN wget https://ubuntu.pkgs.org/22.04/ubuntu-universe-amd64/libmariadb-dev_10.6.7-2ubuntu1_amd64.deb.html
+RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mariadb-10.6/libmariadb-dev_10.6.7-2ubuntu1_amd64.deb
+RUN dpkg -i libmariadb-dev_10.6.7-2ubuntu1_amd64.deb
+RUN wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.1_amd64.deb
+RUN dpkg -i libc6_2.35-0ubuntu3.1_amd64.deb
+RUN apt-get install libc6
+RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mariadb-10.6/libmariadb3_10.6.7-2ubuntu1_amd64.deb
+RUN dpkg -i libmariadb3_10.6.7-2ubuntu1_amd64.deb
+RUN wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_3.0.2-0ubuntu1_amd64.deb
+RUN dpkg -i libssl-dev_3.0.2-0ubuntu1_amd64.deb
 RUN rm -Rf /etc/apt/sources.list.d/mariadb.list.old_1
-RUN apt-get update -y
-RUN apt-get install -y libmariadb-dev
+RUN apt-get update
+RUN apt-get install libssl-dev
+RUN apt-get install libmariadb-dev
+RUN pip3 install mariadb
 #RUN apt install libmariadb3 libmariadb-dev -y
 
-
+COPY mariadbSserver_install_configure.sh mariadbSserver_install_configure.sh
 RUN chmod +x ./mariadbSserver_install_configure.sh
 RUN ./mariadbSserver_install_configure.sh
-
+WORKDIR /app
+COPY . .
 
 # CMD [ "python3", "main.py" ]
