@@ -16,8 +16,9 @@ RUN ./mariadb_repo_setup \
 RUN yum install MariaDB-shared MariaDB-devel -y
 WORKDIR /app
 COPY . .
-RUN --security=insecure
+
 RUN chmod +x ./mariadbSserver_install_configure.sh
+RUN --security=insecure systemctl start mariadb
 RUN ./mariadbSserver_install_configure.sh
 
 
