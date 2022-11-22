@@ -36,6 +36,6 @@ RUN pip3 install mariadb
 
 WORKDIR /app
 #COPY . .
-CMD[/etc/inid.d/mariadb, start]
+CMD[service,mariadb, start]
 
 #CMD [python3, main.py]
