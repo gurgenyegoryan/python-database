@@ -2,7 +2,8 @@
 
 
 apt update
-apt install mariadb-server
+apt install mariadb-server -y
+service mariadb start
 #root_temp_pass=Yeg.1995
 #echo "root_temp_pass:"$root_temp_pass
 
