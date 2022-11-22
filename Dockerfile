@@ -41,3 +41,6 @@ RUN pip3 install mariadb
 
 WORKDIR /app
 COPY . .
+RUN service mariadb start | service mariadb status
+
+#CMD [python3, main.py]
