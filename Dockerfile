@@ -22,7 +22,6 @@ COPY python_installer.sh python_installer.sh
 RUN chmod +x python_installer.sh
 RUN ./python_installer.sh
 
-RUN wget https://ubuntu.pkgs.org/22.04/ubuntu-universe-amd64/libmariadb-dev_10.6.7-2ubuntu1_amd64.deb.html
 RUN wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mariadb-10.6/libmariadb-dev_10.6.7-2ubuntu1_amd64.deb
 RUN dpkg -i libmariadb-dev_10.6.7-2ubuntu1_amd64.deb
 RUN wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.1_amd64.deb
