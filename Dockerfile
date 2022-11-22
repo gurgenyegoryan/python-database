@@ -25,7 +25,7 @@ RUN apt-get update -y \
     #&& wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.1_amd64.deb \
     && apt-get install libc6 \
     && wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mariadb-10.6/libmariadb3_10.6.7-2ubuntu1_amd64.deb \
-    && dpkg -i libmariadb3_10.6.7-2ubuntu1_amd64.deb 
+    && dpkg -i libmariadb3_10.6.7-2ubuntu1_amd64.deb
     #&& wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_3.0.2-0ubuntu1_amd64.deb \
 
 RUN rm -Rf /etc/apt/sources.list.d/mariadb.list.old_1
@@ -36,6 +36,6 @@ RUN pip3 install mariadb
 
 WORKDIR /app
 #COPY . .
-CMD["/etc/inid.d/mariadb", "start"]
+CMD[/etc/inid.d/mariadb, start]
 
 #CMD [python3, main.py]
