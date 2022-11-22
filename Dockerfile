@@ -1,4 +1,4 @@
-FROM centos:centos7.9.2009
+FROM centos/mariadb
 #RUN cd /etc/yum.repos.d/ 
 #RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
 #    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
@@ -17,8 +17,8 @@ RUN yum install MariaDB-shared MariaDB-devel -y
 WORKDIR /app
 COPY . .
 
-RUN chmod +x ./mariadbSserver_install_configure.sh
-RUN --security=insecure systemctl start mariadb
+#RUN chmod +x ./mariadbSserver_install_configure.sh
+
 RUN ./mariadbSserver_install_configure.sh
 
 
