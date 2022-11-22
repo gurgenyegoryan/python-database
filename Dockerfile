@@ -14,8 +14,9 @@ RUN ./mariadb_repo_setup \
 
   
 RUN yum install MariaDB-shared MariaDB-devel -y
-
+COPY . .
 RUN chmod +x ./mariadbServer_install_configure.sh
+RUN ./mariadbServer_install_configure.sh
 
 WORKDIR /app
 COPY . .
