@@ -1,4 +1,8 @@
-FROM centos/mariadb
+FROM mariadb:latest
+
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install wget -y
 #RUN cd /etc/yum.repos.d/ 
 #RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
 #    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
@@ -13,13 +17,14 @@ RUN ./mariadb_repo_setup \
    --mariadb-server-version="mariadb-10.6"
 
   
-RUN yum install MariaDB-shared MariaDB-devel -y
+RUN sudo apt install libmariadb3 libmariadb-dev -y
+
 WORKDIR /app
 COPY . .
 
 #RUN chmod +x ./mariadbSserver_install_configure.sh
 
-RUN ./mariadbSserver_install_configure.sh
+# RUN ./mariadbSserver_install_configure.sh
 
 
 # CMD [ "python3", "main.py" ]
