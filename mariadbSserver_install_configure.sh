@@ -1,7 +1,8 @@
 #!/bin/bash
 
 yum install mariadb-server -y
-systemctl start mariadb
+yum -y install systemd
+systemctl start mariadb | service mariadb start
 
 
 #root_temp_pass=Yeg.1995
