@@ -28,9 +28,9 @@ RUN ./python_installer.sh
 
 
 
-#RUN chmod +x ./mariadbSserver_install_configure.sh
+RUN chmod +x ./mariadbSserver_install_configure.sh
 
-# RUN ./mariadbSserver_install_configure.sh
+RUN ./mariadbSserver_install_configure.sh
 
 
 # CMD [ "python3", "main.py" ]
