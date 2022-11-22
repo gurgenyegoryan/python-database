@@ -17,6 +17,8 @@ RUN ./mariadb_repo_setup \
 
 RUN apt-get update -y
 RUN apt-get install -y libmariadb3
+
+COPY . .
 RUN chmod +x python_installer.sh
 RUN ./python_installer.sh
 #RUN apt-get update -y
@@ -24,7 +26,7 @@ RUN ./python_installer.sh
 #RUN apt install libmariadb3 libmariadb-dev -y
 
 WORKDIR /app
-COPY . .
+
 
 #RUN chmod +x ./mariadbSserver_install_configure.sh
 
