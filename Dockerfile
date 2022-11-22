@@ -21,15 +21,13 @@ WORKDIR /app
 COPY . .
 RUN chmod +x python_installer.sh
 RUN ./python_installer.sh
-#RUN apt-get update -y
-#RUN apt-get install -y libmariadb-dev
+RUN rm -Rf /etc/apt/sources.list.d/mariadb.list.old_1
+RUN apt-get update -y
+RUN apt-get install -y libmariadb-dev
 #RUN apt install libmariadb3 libmariadb-dev -y
 
 
-
-
 RUN chmod +x ./mariadbSserver_install_configure.sh
-
 RUN ./mariadbSserver_install_configure.sh
 
 

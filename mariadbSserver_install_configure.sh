@@ -1,11 +1,6 @@
 #!/bin/bash
 
-#yum install mariadb-server -y
-#yum -y install systemd
 
-
-#root_temp_pass=Yeg.1995
-#echo "root_temp_pass:"$root_temp_pass
 
 cat > mysql_secure_installation.sql << EOF
 UPDATE mysql.user SET Password=PASSWORD('Yeg.1995') WHERE User='root';
@@ -16,3 +11,4 @@ DELETE FROM mysql.user WHERE User='';
 # Make our changes take effect
 FLUSH PRIVILEGES;
 EOF
+mysql -uroot -p"$Yeg.1995" --connect-expired-password <mysql_secure_installation.sql
