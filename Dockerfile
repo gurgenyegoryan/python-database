@@ -29,12 +29,12 @@ RUN && apt-get install libc6 \
     #&& wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_3.0.2-0ubuntu1_amd64.deb \
     && rm -Rf /etc/apt/sources.list.d/mariadb.list.old_1 \
     && apt-get update \
-    && apt-get install libssl-dev -y
-    && apt-get install libmariadb-dev -y
+    && apt-get install libssl-dev -y \
+    && apt-get install libmariadb-dev -y \
     && pip3 install mariadb
 
 WORKDIR /app
-#COPY . .
+COPY mariadbSserver_install_configure.sh mariadbSserver_install_configure.sh
 
 
 #CMD [python3, main.py]
