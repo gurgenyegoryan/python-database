@@ -27,10 +27,8 @@ expect eof
 
 echo "$SECURE_MYSQL"
 
-aptitude -y purge expect
-MAINDB = "pythontest"
-mariadb_user = 'root'
-PASSWORD = "Yeg.1995"
+
+
 mysql -e "CREATE DATABASE pythontest /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 mysql -e "CREATE USER root@localhost IDENTIFIED BY 'Yeg.1995';"
 mysql -e "GRANT ALL PRIVILEGES ON pythontest.* TO 'root'@'localhost';"
