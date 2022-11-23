@@ -12,7 +12,7 @@ RUN wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup \
 
 RUN chmod +x mariadb_repo_setup \
     && ./mariadb_repo_setup \
-   --mariadb-server-version="mariadb-10.6" \
+   --mariadb-server-version="mariadb-10.6"
 
 #Install python
 COPY python_installer.sh python_installer.sh
