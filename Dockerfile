@@ -23,9 +23,7 @@ RUN chmod +x python_installer.sh \
 COPY mariadbSserver_install_configure.sh mariadbSserver_install_configure.sh
 RUN chmod +x mariadbSserver_install_configure.sh \
     && ./mariadbSserver_install_configure.sh
-
-RUN service mariadb status
-    #RUN apt-get update -y \
+#RUN apt-get update -y \
     #&& apt-get install -y libmariadb3 \
     #&& wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mariadb-10.6/libmariadb-dev_10.6.7-2ubuntu1_amd64.deb \
     #&& wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.35-0ubuntu3.1_amd64.deb \
@@ -41,6 +39,6 @@ RUN apt-get install libc6 \
 
 WORKDIR /app
 COPY . .
-ENTRYPOINT service mariadb start
+
 RUN service mariadb start \
     && python3 main.py
