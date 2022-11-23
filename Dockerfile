@@ -41,4 +41,4 @@ WORKDIR /app
 COPY . .
 ENTRYPOINT service mariadb start
 
-RUN python3, main.py
+CMD [usr/bin/python3, main.py]

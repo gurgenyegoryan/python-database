@@ -1,6 +1,6 @@
 import csv
 
-csv_file = "Individual_Incident_2004.csv"
+csv_file = "/app/Individual_Incident_2004.csv"
 with open(csv_file) as file_obj:
     # Get columns name
     csv_data = csv.reader(open(csv_file))
