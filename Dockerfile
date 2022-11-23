@@ -38,7 +38,7 @@ RUN apt-get install libc6 \
     && pip3 install mariadb
 
 WORKDIR /app
-
+COPY . .
 
 
 #CMD [python3, main.py]
