@@ -5,8 +5,8 @@ table_name = 'bigData'
 try:
     conn = mariadb.connect(
         user="root",
-        password="Yeg.1995",
-        host="ngn.am",
+        password="",
+        host="localhost",
         port=3306,
         database="pythontest",
     )

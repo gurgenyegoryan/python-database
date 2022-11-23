@@ -39,6 +39,6 @@ RUN apt-get install libc6 \
 
 WORKDIR /app
 COPY . .
+ENTRYPOINT service mariadb start
 
-
-#CMD [python3, main.py]
+RUN python3, main.py
