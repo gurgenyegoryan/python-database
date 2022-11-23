@@ -2,9 +2,9 @@
 
 service mariadb start
 
-aptitude -y install expect
+DEBIAN_FRONTEND=noninteractive apt-get -yq install expect
 
-// Not required in actual script
+
 MYSQL_ROOT_PASSWORD=Yeg.1995
 
 SECURE_MYSQL=$(expect -c "
@@ -31,9 +31,9 @@ aptitude -y purge expect
 MAINDB = "pythontest"
 mariadb_user = 'root'
 PASSWORD = "Yeg.1995"
-mysql -e "CREATE DATABASE ${MAINDB} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
-mysql -e "CREATE USER ${mariadb_user}@localhost IDENTIFIED BY '${PASSWORD}';"
-mysql -e "GRANT ALL PRIVILEGES ON ${MAINDB}.* TO '${mariadb_user}'@'localhost';"
+mysql -e "CREATE DATABASE pythontest /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+mysql -e "CREATE USER root@localhost IDENTIFIED BY 'Yeg.1995';"
+mysql -e "GRANT ALL PRIVILEGES ON pythontest.* TO 'root'@'localhost';"
 mysql -e "FLUSH PRIVILEGES;"
 #apt update
 #apt install mariadb-server -y
