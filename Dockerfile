@@ -39,6 +39,3 @@ RUN apt-get install libc6 \
 
 WORKDIR /app
 COPY . .
-
-RUN service mariadb start \
-    && python3 main.py
